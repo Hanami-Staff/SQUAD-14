@@ -35,3 +35,51 @@ https://www.youtube.com/watch?v=IMerCpaT_zM
 Git e Github para Iniciantes | Willian Justen [Playlist]
 https://www.youtube.com/watch?v=IBClN6VpJDw&list=PLlAbYrWSYTiPA2iEiQ2PF_A9j__C4hi0A
 >
+
+
+# Documentação da Api
+
+
+## Endpoints
+
+**POST /posts**:
+Esse endpoint permite você criar uma nova postagem.
+
+
+## Post
+
+## Request Body
+
+**title (string, required)**: O titulo da postagem.
+
+**content (string, required)**: O conteudo da postagem.
+
+```
+{
+    "title": "Titulo",
+    "content": "Essa postagem é de teste."
+}
+```
+
+
+## Response
+
+A resposta será um objeto JSON que possui as seguintes propriedades
+
+```
+{
+    "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "title": "Titulo",
+    "content": "Essa postagem é de teste.",
+    "createdAt": "2024-05-21T12:17:55.963-03:00"
+}
+```
+
+
+**id (string)**: O identificador único do post criado.
+
+**title (string)**: O título do post criado.
+
+**content (string)**: O conteúdo do post criado.
+
+**createdAt (string)**: Data da criação da postagem.
