@@ -20,8 +20,9 @@ public class UpdateService {
 
     public String updatePost(UUID id, UpdatePostDTO post){
         Post updatedPost = getIdService.getPostById(id).get();
-        updatedPost.setTitle(post.title());
-        updatedPost.setContent(post.content());
+        post.title().ifPresent(updatedPost::setTitle);
+        post.content().ifPresent(updatedPost::setContent);
+
         postRepository.save(updatedPost);
         return "Postagem atualizada com sucesso!!!";
     }
