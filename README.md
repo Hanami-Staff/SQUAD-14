@@ -103,3 +103,45 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
     "createdAt": "2024-05-21T12:17:55.963-03:00"
 }
 ```
+
+**POST /posts/{id}**:
+Esse endpoint permite você atualizar a postagem do ID informado.
+
+
+## Update
+
+## Request Body
+
+**title (string)**: O titulo da postagem.
+
+**content (string)**: O conteudo da postagem.
+
+```
+{
+    "title": "Novo Titulo",
+    "content": "Novo conteúdo da postagem."
+}
+```
+
+
+## Response
+
+A resposta será um objeto JSON que possui as seguintes propriedades
+
+```
+{
+    "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "title": "Novo Titulo",
+    "content": "Novo conteúdo da postagem.",
+    "createdAt": "2024-05-23T12:17:55.963-03:00"
+}
+```
+
+
+**id (string)**: O identificador único do post criado.
+
+**title (string)**: O título do post criado.
+
+**content (string)**: O conteúdo do post criado.
+
+**createdAt (string)**: Data da criação da postagem.
