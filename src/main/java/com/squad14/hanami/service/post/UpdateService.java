@@ -1,6 +1,6 @@
 package com.squad14.hanami.service.post;
 
-import com.squad14.hanami.dto.post.PostDTO;
+
 import com.squad14.hanami.dto.post.UpdatePostDTO;
 import com.squad14.hanami.model.Post;
 import com.squad14.hanami.repository.PostRepository;
