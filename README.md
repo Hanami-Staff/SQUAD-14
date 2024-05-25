@@ -145,3 +145,17 @@ A resposta será um objeto JSON que possui as seguintes propriedades
 **content (string)**: O conteúdo do post criado.
 
 **createdAt (string)**: Data da criação da postagem.
+
+## DELETE 
+## Endpoints
+**/posts/{id}**
+Esse endpoint permite deletar uma postagem pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único da postagem.
+Response
+A resposta será uma mensagem de confirmação.
+
+```
+Postagem excluída com sucesso!!!
+```
