@@ -3,7 +3,7 @@ package com.squad14.hanami.controller.post;
 import com.squad14.hanami.dto.post.CreatePostDTO;
 import com.squad14.hanami.dto.post.PostDTO;
 import com.squad14.hanami.exception.InvalidFieldException;
-import com.squad14.hanami.service.post.CreateService;
+import com.squad14.hanami.service.post.CreatePostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/posts")
-public class CreateController {
+public class CreatePostController {
     @Autowired
-    private CreateService createService;
+    private CreatePostService createService;
 
     @PostMapping
-    public ResponseEntity<PostDTO> createPost(@RequestBody CreatePostDTO post){
-        if(post.title().isBlank()){
-            throw  new InvalidFieldException("Titulo");
+    public ResponseEntity<PostDTO> createPost(@RequestBody CreatePostDTO post) {
+        if (post.title().isBlank()) {
+            throw new InvalidFieldException("Titulo");
         }
 
-        if(post.content().isBlank()){
-            throw  new InvalidFieldException("Conteudo");
+        if (post.content().isBlank()) {
+            throw new InvalidFieldException("Conteudo");
         }
 
         PostDTO createdPost = new PostDTO(createService.createPost(post));
