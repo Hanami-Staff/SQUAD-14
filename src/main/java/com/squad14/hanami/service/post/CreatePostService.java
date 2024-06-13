@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class CreateService {
+public class CreatePostService {
     @Autowired
     private PostRepository postRepository;
 
-    public Post createPost(CreatePostDTO post){
-        Post createdPost =  new Post();
+    public Post createPost(CreatePostDTO post) {
+        Post createdPost = new Post();
         createdPost.setTitle(post.title());
         createdPost.setContent(post.content());
         createdPost.setCreatedAt(new Date());

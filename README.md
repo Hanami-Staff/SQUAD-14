@@ -39,6 +39,7 @@ https://www.youtube.com/watch?v=IBClN6VpJDw&list=PLlAbYrWSYTiPA2iEiQ2PF_A9j__C4h
 
 # Documentação da Api
 
+# POSTAGENS
 
 ## Endpoints
 
@@ -46,7 +47,7 @@ https://www.youtube.com/watch?v=IBClN6VpJDw&list=PLlAbYrWSYTiPA2iEiQ2PF_A9j__C4h
 Esse endpoint permite você criar uma nova postagem.
 
 
-## Post
+## POST
 
 ## Request Body
 
@@ -132,7 +133,7 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 
 
 
-## Update
+## UPDATE
 
 **POST /posts/{id}**:
 Esse endpoint permite você atualizar a postagem do ID informado.
@@ -186,3 +187,46 @@ A resposta será uma mensagem de confirmação.
 ```
 Postagem excluída com sucesso!!!
 ```
+
+# COMENTÁRIOS
+**POST /comments**:
+Esse endpoint permite você adicionar um novo comentário a uma postagem específica.
+
+
+## POST
+
+## Request Body
+
+**postId (string, required)**: O ID da postagem.
+
+**content (string, required)**: O conteudo do comentário.
+
+```
+{
+    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754",
+    "content": "Novo comentário."
+}
+```
+
+
+## Response
+
+A resposta será um objeto JSON que possui as seguintes propriedades
+
+```
+{
+    "id": "6d55428e-280d-4319-b81b-13c77a2c3ef9",
+    "content": "Novo comentário.",
+    "createdAt": "2024-06-12T09:21:14.326-03:00",
+    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754"
+}
+```
+
+
+**id (string)**: O identificador único do comentário criado.
+
+**content (string)**: O conteúdo do comentário criado.
+
+**createdAt (string)**: Data da criação do comentário.
+
+**postId (string)**: O identificador único da postagem.
