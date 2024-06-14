@@ -12,7 +12,7 @@ import com.squad14.hanami.repository.PostRepository;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
-public class GetIdService {
+public class GetIdPostService {
     @Autowired
     private PostRepository postRepository;
 
