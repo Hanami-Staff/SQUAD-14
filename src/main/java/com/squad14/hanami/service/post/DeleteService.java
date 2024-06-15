@@ -13,7 +13,7 @@ public class DeleteService {
     @Autowired
     private PostRepository postRepository;
     @Autowired
-    private GetIdService getIdService;
+    private GetIdPostService getIdService;
 
     public String deletePost(UUID id) {
         getIdService.getPostById(id);

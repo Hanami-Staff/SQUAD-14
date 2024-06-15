@@ -230,3 +230,23 @@ A resposta será um objeto JSON que possui as seguintes propriedades
 **createdAt (string)**: Data da criação do comentário.
 
 **postId (string)**: O identificador único da postagem.
+
+
+## GET ID
+## Endpoints
+**/comments/{id}**
+Esse endpoint permite buscar um comentário pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único do comentário.
+Response
+A resposta será um objeto JSON que possui as seguintes propriedades:
+
+```
+{
+    "id": "6d55428e-280d-4319-b81b-13c77a2c3ef9",
+    "content": "Novo comentário.",
+    "createdAt": "2024-06-12T09:21:14.326-03:00",
+    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754"
+}
+````

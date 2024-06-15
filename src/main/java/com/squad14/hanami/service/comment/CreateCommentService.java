@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.squad14.hanami.dto.comment.CreateCommentDTO;
 import com.squad14.hanami.model.Comment;
 import com.squad14.hanami.repository.CommentRepository;
-import com.squad14.hanami.service.post.GetIdService;
+import com.squad14.hanami.service.post.GetIdPostService;
 
 @Service
 public class CreateCommentService {
@@ -16,7 +16,7 @@ public class CreateCommentService {
   private CommentRepository commentRepository;
 
   @Autowired
-  private GetIdService getIdService;
+  private GetIdPostService getIdService;
 
   public Comment createComment(CreateCommentDTO comment) {
     Comment createdComment = new Comment();

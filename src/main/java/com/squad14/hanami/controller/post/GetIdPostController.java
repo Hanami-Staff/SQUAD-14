@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.squad14.hanami.dto.post.PostDTO;
 import com.squad14.hanami.model.Post;
-import com.squad14.hanami.service.post.GetIdService;
+import com.squad14.hanami.service.post.GetIdPostService;
 
 @RestController
 @RequestMapping("/posts/{id}")
-public class GetIdController {
+public class GetIdPostController {
     @Autowired
-    private GetIdService getIdService;
+    private GetIdPostService getIdService;
 
     @GetMapping
     public ResponseEntity<PostDTO> getPostById(@PathVariable UUID id) {
