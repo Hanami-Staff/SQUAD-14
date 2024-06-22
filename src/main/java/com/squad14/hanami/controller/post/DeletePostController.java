@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.squad14.hanami.service.post.DeleteService;
+import com.squad14.hanami.service.post.DeletePostService;
 
 @RestController
 @RequestMapping("/posts")
-public class DeleteController {
+public class DeletePostController {
     @Autowired
-    private DeleteService deleteService;
+    private DeletePostService deleteService;
 
     @DeleteMapping("/{id}")
     public String deletePost(@PathVariable UUID id) {
