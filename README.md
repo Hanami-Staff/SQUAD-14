@@ -250,3 +250,17 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
     "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754"
 }
 ````
+
+## DELETE 
+## Endpoints
+**/comments/{id}**
+Esse endpoint permite deletar um comentario pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único de comentario.
+Response
+A resposta será uma mensagem de confirmação.
+
+```
+Comentario excluído com sucesso!!!
+```
