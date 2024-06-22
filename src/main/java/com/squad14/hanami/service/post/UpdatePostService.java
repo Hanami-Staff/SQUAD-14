@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
-public class UpdateService {
+public class UpdatePostService {
 
     @Autowired
     private GetIdPostService getIdService;
