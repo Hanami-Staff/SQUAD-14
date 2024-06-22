@@ -10,7 +10,7 @@ import com.squad14.hanami.dto.post.PostDTO;
 import com.squad14.hanami.repository.PostRepository;
 
 @Service
-public class GetAllService {
+public class GetAllPostService {
   @Autowired
   private PostRepository postRepository;
 
