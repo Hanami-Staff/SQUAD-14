@@ -198,6 +198,32 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 }
 ````
 
+
+## GET 
+## Endpoints
+**/comments**
+Esse endpoint permite listar os comentarios.
+
+
+Response
+A resposta será um objeto JSON que possui as seguintes propriedades:
+
+```
+
+{
+    "postId": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "content": "Esse comentario é de teste.",
+    "createdAt": "2024-05-21T12:17:55.963-03:00"
+},
+{
+    "postId": "14efd749-7ac6-498a-8de2-24f85f414aa5",
+    "content": "Esse comentario é de teste.",
+    "createdAt": "2024-05-21T12:17:55.963-03:00"
+},
+...
+```
+
+
 ## UPDATE
 
 **PUT /comments/{id}**:

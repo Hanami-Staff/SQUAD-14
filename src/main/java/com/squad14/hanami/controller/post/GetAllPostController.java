@@ -3,7 +3,7 @@ package com.squad14.hanami.controller.post;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.squad14.hanami.dto.post.PostDTO;
-import com.squad14.hanami.service.post.GetAllService;
+import com.squad14.hanami.service.post.GetAllPostService;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/posts")
-public class GetAllController {
+public class GetAllPostController {
     @Autowired
-    private GetAllService getAllService;
+    private GetAllPostService getAllService;
 
     @GetMapping
      public List<PostDTO> getAllPost(){
