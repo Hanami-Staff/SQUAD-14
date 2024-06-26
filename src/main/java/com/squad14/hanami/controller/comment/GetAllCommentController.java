@@ -9,23 +9,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
 
 @RestController
 @RequestMapping("/comments")
+@CrossOrigin("*")
 public class GetAllCommentController {
-    @Autowired
-    private GetAllCommentService getAllService;
+  @Autowired
+  private GetAllCommentService getAllService;
 
-    @GetMapping
-     public List<CommentDTO> getAllComment(){
-    List<CommentDTO> comments=getAllService.getAllComment();
+  @GetMapping
+  public List<CommentDTO> getAllComment() {
+    List<CommentDTO> comments = getAllService.getAllComment();
     return comments;
   }
-    
-    
-    
+
 }

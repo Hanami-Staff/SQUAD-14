@@ -9,23 +9,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
 
 @RestController
 @RequestMapping("/posts")
+@CrossOrigin("*")
 public class GetAllPostController {
-    @Autowired
-    private GetAllPostService getAllService;
+  @Autowired
+  private GetAllPostService getAllService;
 
-    @GetMapping
-     public List<PostDTO> getAllPost(){
-    List<PostDTO> posts=getAllService.getAllPost();
+  @GetMapping
+  public List<PostDTO> getAllPost() {
+    List<PostDTO> posts = getAllService.getAllPost();
     return posts;
   }
-    
-    
-    
+
 }

@@ -3,6 +3,7 @@ package com.squad14.hanami.controller.comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.squad14.hanami.service.comment.CreateCommentService;
 
 @RestController
 @RequestMapping("/comments")
+@CrossOrigin("*")
 public class CreateCommentController {
   @Autowired
   private CreateCommentService createService;
