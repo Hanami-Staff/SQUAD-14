@@ -1,4 +1,4 @@
-package com.squad14.hanami.controller.post;
+package com.squad14.hanami.controller.comment;
 
 import java.util.UUID;
 
@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.squad14.hanami.service.post.DeleteService;
+import com.squad14.hanami.service.comment.DeleteCommentService;
 
 @RestController
-@RequestMapping("/posts")
-public class DeleteController {
+@RequestMapping("/comments")
+public class DeleteCommentController {
     @Autowired
-    private DeleteService deleteService;
+    private DeleteCommentService deleteService;
 
     @DeleteMapping("/{id}")
-    public String deletePost(@PathVariable UUID id) {
+    public String deleteComment(@PathVariable UUID id) {
 
-        return deleteService.deletePost(id);
+        return deleteService.deleteComment(id);
     }
 
 }

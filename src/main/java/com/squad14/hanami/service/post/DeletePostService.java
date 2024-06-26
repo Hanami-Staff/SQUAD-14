@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.squad14.hanami.repository.PostRepository;
 
 @Service
-public class DeleteService {
+public class DeletePostService {
 
     @Autowired
     private PostRepository postRepository;

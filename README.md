@@ -198,7 +198,6 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 }
 ````
 
-
 ## GET 
 ## Endpoints
 **/comments**
@@ -224,6 +223,7 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 ```
 
 
+
 ## UPDATE
 
 **PUT /comments/{id}**:
@@ -246,4 +246,18 @@ A resposta será um objeto JSON que possui as seguintes propriedades
 
 ```
 Comentario atualizado com sucesso!!!
+```
+
+## DELETE 
+## Endpoints
+**/comments/{id}**
+Esse endpoint permite deletar um comentario pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único de comentario.
+Response
+A resposta será uma mensagem de confirmação.
+
+```
+Comentario excluído com sucesso!!!
 ```
