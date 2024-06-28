@@ -11,6 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/posts")
+@CrossOrigin("*")
 public class UpdatePostController {
     @Autowired
     private UpdatePostService updateService;
