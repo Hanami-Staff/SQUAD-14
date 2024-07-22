@@ -31,7 +31,7 @@ public class CreateUserController {
       throw new InvalidFieldException("Email");
     }
 
-    if (user.password() == null || user.password().isBlank()) {
+    if (user.password() == null || user.password().length() < 6 || user.password().length() > 255) {
       throw new InvalidFieldException("Senha");
     }
 
