@@ -35,6 +35,11 @@ public class Comment {
   @JoinColumn(nullable = false)
   private Post post;
 
+  @ManyToOne
+  @OnDelete(action = OnDeleteAction.CASCADE)
+  @JoinColumn(nullable = false)
+  private User user;
+
   @Column(nullable = false)
   private Date createdAt;
 
