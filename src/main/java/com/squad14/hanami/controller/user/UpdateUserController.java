@@ -16,7 +16,7 @@ import com.squad14.hanami.model.User;
 import com.squad14.hanami.service.user.UpdateUserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 @CrossOrigin("*")
 public class UpdateUserController {
   @Autowired
