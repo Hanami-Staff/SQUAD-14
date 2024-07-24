@@ -9,6 +9,7 @@ import com.squad14.hanami.dto.comment.CreateCommentDTO;
 import com.squad14.hanami.model.Comment;
 import com.squad14.hanami.repository.CommentRepository;
 import com.squad14.hanami.service.post.GetIdPostService;
+import com.squad14.hanami.service.user.GetIdUserService;
 
 @Service
 public class CreateCommentService {
@@ -16,12 +17,16 @@ public class CreateCommentService {
   private CommentRepository commentRepository;
 
   @Autowired
-  private GetIdPostService getIdService;
+  private GetIdPostService getPostService;
+
+  @Autowired
+  private GetIdUserService getUserService;
 
   public Comment createComment(CreateCommentDTO comment) {
     Comment createdComment = new Comment();
     createdComment.setContent(comment.content());
-    createdComment.setPost(getIdService.getPostById(comment.postId()).get());
+    createdComment.setPost(getPostService.getPostById(comment.postId()).get());
+    createdComment.setUser(getUserService.getUserById(comment.userId()).get());
     createdComment.setCreatedAt(new Date());
     return commentRepository.save(createdComment);
   }
