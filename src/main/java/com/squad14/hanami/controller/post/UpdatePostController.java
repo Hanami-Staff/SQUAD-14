@@ -18,16 +18,12 @@ public class UpdatePostController {
 
     @PutMapping("/{id}")
     public String updatePost(@PathVariable UUID id, @RequestBody Post post) {
-        if (!(post.getTitle() == null)) {
-            if (post.getTitle().isBlank()) {
-                throw new InvalidFieldException("Titúlo");
-            }
+        if (!(post.getTitle() == null) && post.getTitle().isBlank()) {
+            throw new InvalidFieldException("Titúlo");
         }
 
-        if (!(post.getContent() == null)) {
-            if (post.getContent().isBlank()) {
-                throw new InvalidFieldException("Conteúdo");
-            }
+        if (!(post.getContent() == null) && post.getContent().isBlank()) {
+            throw new InvalidFieldException("Conteúdo");
         }
 
         UpdatePostDTO updatePost = new UpdatePostDTO(post);
