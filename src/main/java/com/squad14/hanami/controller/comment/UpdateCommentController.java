@@ -24,10 +24,8 @@ public class UpdateCommentController {
 
   @PutMapping("/{id}")
   public String updateComment(@PathVariable UUID id, @RequestBody Comment comment) {
-    if (!(comment.getContent() == null)) {
-      if (comment.getContent().isBlank()) {
-        throw new InvalidFieldException("Conteúdo");
-      }
+    if (!(comment.getContent() == null) && comment.getContent().isBlank()) {
+      throw new InvalidFieldException("Conteúdo");
     }
 
     UpdateCommentDTO updateComment = new UpdateCommentDTO(comment);

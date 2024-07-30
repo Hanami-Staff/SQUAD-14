@@ -318,3 +318,20 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
     "email": "usuario@email.com"
 }
 ```
+
+## UPDATE
+
+**PUT /user/{id}**:
+Esse endpoint permite você atualizar os dados do usuario do ID informado.
+
+## Request Body
+
+**name (string)**: O nome do usuario.
+
+**email (string)**: O email do usuario.
+
+**password (string, minimun 6 characters, maximum 255 characters)**: A senha do usuario.
+
+```
+Usuario atualizado com sucesso.
+```
