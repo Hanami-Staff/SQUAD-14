@@ -300,3 +300,21 @@ A resposta será um objeto JSON que possui as seguintes propriedades
     "email": "usuario@email.com"
 }
 ```
+
+## GET ID
+## Endpoints
+**GET /user/{id}**:
+Esse endpoint permite buscar um Usuário pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único do usuário.
+Response
+A resposta será um objeto JSON que possui as seguintes propriedades:
+
+```
+{
+    "id": "3258c1bd-1e7a-48f3-a9ee-eb2ee2d953a2",
+    "name": "Usuario",
+    "email": "usuario@email.com"
+}
+```
