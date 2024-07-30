@@ -261,3 +261,42 @@ A resposta será uma mensagem de confirmação.
 ```
 Comentario excluído com sucesso!!!
 ```
+
+# USUARIOS
+
+## Endpoints
+
+**POST /user**:
+Esse endpoint permite você criar um novo usuario.
+
+
+## POST
+
+## Request Body
+
+**name (string, required)**: O nome do usuario.
+
+**email (string, required)**: O email do usuario.
+
+**password (string, required, minimun 6 characters, maximum 255 characters)**: A senha do usuario.
+
+```
+{
+    "name": "Usuario",
+    "email": "usuario@email.com",
+    "password": "123456"
+}
+```
+
+
+## Response
+
+A resposta será um objeto JSON que possui as seguintes propriedades
+
+```
+{
+    "id": "3258c1bd-1e7a-48f3-a9ee-eb2ee2d953a2",
+    "name": "Usuario",
+    "email": "usuario@email.com"
+}
+```

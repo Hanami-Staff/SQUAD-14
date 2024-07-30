@@ -21,11 +21,11 @@ public class CreatePostController {
 
     @PostMapping
     public ResponseEntity<PostDTO> createPost(@RequestBody CreatePostDTO post) {
-        if (post.title().isBlank()) {
+        if (post.title() == null || post.title().isBlank()) {
             throw new InvalidFieldException("Titulo");
         }
 
-        if (post.content().isBlank()) {
+        if (post.content() == null || post.content().isBlank()) {
             throw new InvalidFieldException("Conteudo");
         }
 

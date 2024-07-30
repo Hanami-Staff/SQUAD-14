@@ -23,11 +23,11 @@ public class CreateCommentController {
 
   @PostMapping
   public ResponseEntity<CommentDTO> createComment(@RequestBody CreateCommentDTO comment) {
-    if (comment.content().isBlank()) {
+    if (comment.content() == null || comment.content().isBlank()) {
       throw new InvalidFieldException("Comentario");
     }
 
-    if (comment.postId() == null) {
+    if (comment.postId() == null || comment.postId() == null) {
       throw new InvalidFieldException("ID da postagem");
     }
 
