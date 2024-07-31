@@ -1,6 +1,7 @@
 package com.squad14.hanami.config;
 
 import com.squad14.hanami.dto.ExceptionDTO;
+import com.squad14.hanami.exception.IncorrectCredentialsException;
 import com.squad14.hanami.exception.InvalidFieldException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -29,6 +30,12 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ExceptionDTO> invalidResponseEntity(MethodArgumentTypeMismatchException e) {
         ExceptionDTO exceptionDTO = new ExceptionDTO("ID informado é inválido.");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionDTO);
+    }
+
+    @ExceptionHandler(IncorrectCredentialsException.class)
+    public ResponseEntity<ExceptionDTO> invalidCredentialsException(IncorrectCredentialsException e) {
+        ExceptionDTO exceptionDTO = new ExceptionDTO(e.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionDTO);
     }
 }
