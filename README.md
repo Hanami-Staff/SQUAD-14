@@ -335,3 +335,17 @@ Esse endpoint permite você atualizar os dados do usuario do ID informado.
 ```
 Usuario atualizado com sucesso.
 ```
+
+## DELETE 
+## Endpoints
+**/user/{id}**
+Esse endpoint permite deletar um usuário pelo seu identificador único (ID).
+
+## Path Parameters
+**id (string, required)**: O identificador único do usuário.
+Response
+A resposta será uma mensagem de confirmação.
+
+```
+Usuário excluído com sucesso!!!
+```
