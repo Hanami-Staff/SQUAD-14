@@ -66,6 +66,25 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 }
 ```
 
+## GET BY USER
+## Endpoints
+**/postsByUser/{userId}**
+Esse endpoint permite buscar uma postagem pelo seu identificador único (ID).
+
+## Path Parameters
+**userId (string, required)**: O identificador único do usuario.
+Response
+A resposta será um objeto JSON que possui as seguintes propriedades:
+
+```
+{
+    "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "title": "Titulo",
+    "content": "Essa postagem é de teste.",
+    "createdAt": "2024-05-21T12:17:55.963-03:00"
+}
+```
+
 ## GET 
 ## Endpoints
 **/posts**
