@@ -308,7 +308,7 @@ Comentario excluído com sucesso!!!
 
 ## Endpoints
 
-**POST /user**:
+**POST /auth/register**:
 Esse endpoint permite você criar um novo usuario.
 
 
@@ -325,6 +325,26 @@ Esse endpoint permite você criar um novo usuario.
 ```
 {
     "name": "Usuario",
+    "email": "usuario@email.com",
+    "password": "123456"
+}
+```
+## Endpoints
+
+**POST /auth/login**:
+Esse endpoint permite você fazer login.
+
+
+## POST
+
+## Request Body
+
+**email (string, required)**: O email do usuario.
+
+**password (string, required, minimun 6 characters, maximum 255 characters)**: A senha do usuario.
+
+```
+{
     "email": "usuario@email.com",
     "password": "123456"
 }
