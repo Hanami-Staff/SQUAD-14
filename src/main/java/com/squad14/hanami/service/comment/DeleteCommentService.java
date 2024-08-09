@@ -18,6 +18,6 @@ public class DeleteCommentService {
     public String deleteComment(UUID id) {
         getIdService.getCommentById(id);
         commentRepository.deleteById(id);
-        return "Commentario excluído com sucesso!!!";
+        return "Comentario excluído com sucesso!!!";
     }
 }
