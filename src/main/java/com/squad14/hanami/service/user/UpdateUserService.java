@@ -3,6 +3,7 @@ package com.squad14.hanami.service.user;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.squad14.hanami.dto.user.UpdateUserDTO;
@@ -17,13 +18,22 @@ public class UpdateUserService {
   @Autowired
   private GetIdUserService getIdUserService;
 
+  @Autowired
+  private PasswordEncoder passwordEncoder;
+
   public String updateUser(UUID id, UpdateUserDTO user) {
     User updatedUser = getIdUserService.getUserById(id).get();
+
     user.name().ifPresent(updatedUser::setName);
-    user.password().ifPresent(updatedUser::setPassword);
+
+    user.password().ifPresent(password -> {
+      String encodedPassword = passwordEncoder.encode(password);
+      updatedUser.setPassword(encodedPassword);
+    });
+
     user.email().ifPresent(updatedUser::setEmail);
 
     userRepository.save(updatedUser);
-    return "Usuario atualizado com sucesso.";
+    return "Usuário atualizado com sucesso.";
   }
 }
