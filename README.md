@@ -12,12 +12,15 @@ Esse endpoint permite você criar uma nova postagem.
 
 ## Request Body
 
+**userId (string, required)**: O Id do usuário dono da postagem.
+
 **title (string, required)**: O titulo da postagem.
 
 **content (string, required)**: O conteudo da postagem.
 
 ```
 {
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
     "title": "Titulo",
     "content": "Essa postagem é de teste."
 }
@@ -31,6 +34,8 @@ A resposta será um objeto JSON que possui as seguintes propriedades
 ```
 {
     "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
+    "username": "David",
     "title": "Titulo",
     "content": "Essa postagem é de teste.",
     "createdAt": "2024-05-21T12:17:55.963-03:00"
@@ -60,6 +65,8 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 ```
 {
     "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
+    "username": "David",
     "title": "Titulo",
     "content": "Essa postagem é de teste.",
     "createdAt": "2024-05-21T12:17:55.963-03:00"
@@ -79,10 +86,21 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 ```
 {
     "id": "25178498-e386-4c5f-b936-32497d4f77a1",
-    "title": "Titulo",
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
+    "username": "David",
+    "title": "Titulo 1",
     "content": "Essa postagem é de teste.",
     "createdAt": "2024-05-21T12:17:55.963-03:00"
-}
+},
+{
+    "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
+    "username": "David",
+    "title": "Titulo 2",
+    "content": "Essa postagem é de teste.",
+    "createdAt": "2024-05-21T12:17:55.963-03:00"
+},
+...
 ```
 
 ## GET 
@@ -98,12 +116,16 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 
 {
     "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "userId": "c13df130-81ca-4792-8432-f7bc336e81d9",
+    "username": "David",
     "title": "Titulo 1",
     "content": "Essa postagem é de teste.",
     "createdAt": "2024-05-21T12:17:55.963-03:00"
 },
 {
-    "id": "14efd749-7ac6-498a-8de2-24f85f414aa5",
+    "id": "25178498-e386-4c5f-b936-32497d4f77a1",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
     "title": "Titulo 2",
     "content": "Essa postagem é de teste.",
     "createdAt": "2024-05-21T12:17:55.963-03:00"
@@ -169,8 +191,9 @@ Esse endpoint permite você adicionar um novo comentário a uma postagem especí
 
 ```
 {
-    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754",
-    "content": "Novo comentário."
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "content": "Novo comentário 2.",
 }
 ```
 
@@ -181,10 +204,12 @@ A resposta será um objeto JSON que possui as seguintes propriedades
 
 ```
 {
-    "id": "6d55428e-280d-4319-b81b-13c77a2c3ef9",
-    "content": "Novo comentário.",
-    "createdAt": "2024-06-12T09:21:14.326-03:00",
-    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754"
+   "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 2.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 }
 ```
 
@@ -210,10 +235,12 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 
 ```
 {
-    "id": "6d55428e-280d-4319-b81b-13c77a2c3ef9",
-    "content": "Novo comentário.",
-    "createdAt": "2024-06-12T09:21:14.326-03:00",
-    "postId": "3a52d80f-0e47-47ba-a3b0-8bf717fe1754"
+   "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 2.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 }
 ````
 
@@ -229,14 +256,20 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 ```
 
 {
-    "postId": "25178498-e386-4c5f-b936-32497d4f77a1",
-    "content": "Esse comentario é de teste.",
-    "createdAt": "2024-05-21T12:17:55.963-03:00"
+    "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 1.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 },
 {
-    "postId": "14efd749-7ac6-498a-8de2-24f85f414aa5",
-    "content": "Esse comentario é de teste.",
-    "createdAt": "2024-05-21T12:17:55.963-03:00"
+   "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 2.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 },
 ...
 ```
@@ -253,14 +286,20 @@ A resposta será um objeto JSON que possui as seguintes propriedades:
 ```
 
 {
-    "postId": "25178498-e386-4c5f-b936-32497d4f77a1",
-    "content": "Esse comentario é de teste.",
-    "createdAt": "2024-05-21T12:17:55.963-03:00"
+    "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 1.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 },
 {
-    "postId": "14efd749-7ac6-498a-8de2-24f85f414aa5",
-    "content": "Esse comentario é de teste.",
-    "createdAt": "2024-05-21T12:17:55.963-03:00"
+    "id": "040d924a-05ea-4a86-97fe-8949bfd5781c",
+    "postId": "0c62af2c-e835-4547-a5f6-1ce63768b989",
+    "userId": "f3dad3c3-78e2-43b6-b068-66ab2a59c29c",
+    "username": "Jeferson",
+    "content": "Novo comentário 2.",
+    "createdAt": "2024-08-09T18:59:55.851-03:00"
 },
 ...
 ```
