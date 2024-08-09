@@ -22,17 +22,14 @@ public class TokenService {
     public String generateToken(User user) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
-
-            String token = JWT.create()
+            return JWT.create()
                     .withIssuer("squad14")
-                    .withSubject(user.getEmail())
+                    .withSubject(user.getId().toString())
                     .withExpiresAt(this.generateExpirationDate())
                     .sign(algorithm);
 
-            return token;
-
         } catch (JWTCreationException exception) {
-            throw new RuntimeException("Error enquanto autenticava");
+            throw new RuntimeException("Erro ao criar token.");
         }
     }
 
